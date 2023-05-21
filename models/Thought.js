@@ -2,6 +2,20 @@ const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
 
+function dateFormat(timestamp) {
+  const options = {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    hour: 'numeric',
+    minute: 'numeric',
+    second: 'numeric',
+    hour12: false,
+  };
+  
+  return new Date(timestamp).toLocaleString(undefined, options);
+}
+
 const reactionSchema = new Schema(
   {
     reactionId: {

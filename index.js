@@ -14,12 +14,11 @@ mongoose.connect('mongodb://localhost/social-network', {
 const userRoutes = require('./api/users');
 const thoughtRoutes = require('./api/thoughts');
 const reactionRoutes = require('./api/reactions');
-const friendRoutes = require('./api/friends');
 
 app.use('/api/users', userRoutes);
 app.use('/api/thoughts', thoughtRoutes);
 app.use('/api/reactions', reactionRoutes);
-app.use('/api/friends', friendRoutes);
+
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
