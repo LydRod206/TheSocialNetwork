@@ -25,26 +25,31 @@ router.get('/', async (req, res) => {
 
 // Get a single thought by its _id
 router.get('/:id', async (req, res) => {
-    try {
-      const thought = await Thought.findById(req.params.id);
-      if (!thought) {
-        return res.status(404).json({ message: 'Thought not found' });
-      }
-      res.json(thought);
-    } catch (err) {
-      console.error(err);
-      res.status(500).json({ message: 'Server Error' });
+  try {
+    const thought = await Thought.findById(req.params.id);
+    if (!thought) {
+      return res.status(404).json({ message: 'Thought not found' });
     }
-  });
+    res.json(thought);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: 'Server Error' });
+  }
+});
+
   
 // create a new thought
 router.post('/', async (req, res) => {
   try {
-    const thought = await Thought.create(req.body);
+    const { username, thoughtText } = req.body;
+    const thought = await Thought.create({
+      username,
+      thoughtText
+    });
     res.status(201).json(thought);
   } catch (err) {
     console.error(err);
-    res.status(500).json({message: 'Server Error'});
+    res.status(500).json({ message: 'Server Error' });
   }
 });
 
