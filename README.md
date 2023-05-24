@@ -52,3 +52,10 @@ DELETE /api/reactions/:thoughtId/:reactionId - Delete a reaction from a thought
 ### License
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+### Find a live demo here
+
+
+https://youtu.be/ofkceIp5wgA
+
+![Screenshot 2023-05-23 at 5 52 28 PM](https://github.com/LydRod206/TheSocialNetwork/assets/119384486/43c51b01-2a03-41ab-9b1d-e69da4092451)
